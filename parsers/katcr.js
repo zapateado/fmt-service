@@ -52,9 +52,9 @@ async function parse() {
 
     const puppetPage = await browser.newPage();
 
-    for(var cat = categories.length - 1; cat >= 0; cat--) {
+    for(var cat = 0; cat < categories.length; cat++) {
         const category = categories[cat];
-        for(var page = 200; page >= 1; page--) {
+        for(var page = 1; page <= 200; page++) {
             try {
                 const currentPage = `${baseUrl}/${category}/${page}`;
                 await puppetPage.goto(currentPage);
